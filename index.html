@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>reveal.js</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style>
+			.box{
+				height: max-content;
+			}
+			.flex{
+				display: flex;
+			}
+			.box>*{
+				background-color: blue;
+				border-radius: 10%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Responsive Web Design</h1>
+				</section>
+				<!--slide with the synonyms-->
+				<section>
+					<h2 style="font-size: 70px;">What does it mean?</h2>
+					<ul>
+						<li class="fragment">Quick to react</li>
+						<li class="fragment">Receptive</li>
+						<li class="fragment">Flexible</li>
+						<li class="fragment">Sensitive</li>
+					</ul>
+				</section>
+				<section>
+					<p data-fragment-index="1" style="font-size: 70px;">Why is it important?</p>
+					<ul>
+						<li class="fragment">Many different devices that you can use to go online</li>
+						<li class="fragment">Different OS's on this devices</li>
+						<li class="fragment">You can resize the browser window</li>
+					</ul>
+				</section>
+				<section>
+						<p class="fragment grow">A web page should look good on any device</p>
+				</section>
+				<section>
+					<img src="./img/devices-screen-sizes.jpg" alt="screen sizes">
+				</section>
+				<section>
+					<h3>Responsive vs adaptive</h3>
+					<p class="fragment"><img height="350px" src="./img/adaptive_web_design_img.png" alt="screen sizes"></p>
+				</section>
+				<section>
+					<p class="fragment grow">Where we can find the examples of Responsive web design?</p>
+				</section>
+				<section>
+					<img src="./img/github-responsive-web-design.png" alt="RWD example (github)">
+				</section>
+				<section>
+					<img src="./img/Responsive-Field-Day_x4hfme.jpg" alt="RWD example 2">
+				</section>
+				<section>
+					<img src="./img/Ethan-Marcotte-RWD.jpg" alt="RWD example 3">
+				</section>
+				<section>
+					<h2>What we should to do, to create RWD?</h2>
+					<ul>
+						<li class="fragment fade-up" data-fragment-index="1">Set the viewport</li>
+						<li class="fragment fade-up" style="color: red;" data-fragment-index="2">Do not use large fixed width elements</li>
+						<li class="fragment fade-up" data-fragment-index="3">Use CSS media queries</li>
+						<li class="fragment fade-up" data-fragment-index="4">Flexbox</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Set the viewport</h2>
+						<h4 class="fragment">What is it?</h4>
+						<span class="fragment fade-up" style="color: green;">This is a meta tag with the name <span style="color: red; font-style: italic">viewport</span></span>
+						<pre class="fragment fade-up" style="width: max-content;">
+							<code data-trim>
+								<meta name="viewport" content="width=device-width, initial-scale=1">	
+							</code>
+						</pre>
+						<h4 class="fragment fade-up">Why?</h4>
+						<span class="fragment fade-up"  style="color: green;">Browser needs to know how to scale the page for your screen</span>
+					</section>
+					<section style="display:flex; flex-direction:row;">
+						<img height="650px" src="./img/no-vp.png" alt="no viewport">
+						<img height="650px" src="./img/vp.png" alt="with viewport">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2 style="color: red;">Do not use large fixed width elements</h2>
+						<h4 class="fragment">Why?</h4>
+						<pre class="fragment">
+							<code style="width: 790px">
+								<span>large fixed width elements</span>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Using relative width values</h3>
+						<ul>
+							<li class="fragment">%</li>
+							<li class="fragment">vw</li>
+							<li class="fragment">vh</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Use CSS media queries</h2>
+					<pre class="fragment">
+						<code data-trim data-noescape>
+							@media (query) {
+								/* CSS Rules used when query matches */
+							}
+						</code>
+					</pre>
+					<span class="fragment">Most often for responsive web design queries are:</span>
+					<ul>
+						<li class="fragment">min-width</li>
+						<li class="fragment">max-wigth</li>
+						<li class="fragment">min-heigth</li>
+						<li class="fragment">max-height</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Flexbox</h1>
+				</section>
+				<section>
+					<section>
+						<pre>
+							<code data-trim>
+								<div class="box">
+									<div>One</div>
+									<div>Two</div>
+									<div>Three</div>
+								</div>
+							</code>
+						</pre>
+						<div class="box">
+							<div>One</div>
+							<div>Two</div>
+							<div>Three</div>
+						</div>
+					</section>
+					<section>
+						<h3>Turn on</h3>
+						<pre class="fragment">
+							<code data-trim>
+								.box{
+									display: flex;
+								}
+							</code>
+						</pre>
+						<div class="fragment box flex">
+							<div>One</div>
+							<div>Two</div>
+							<div>Three</div>
+						</div>
+					</section>
+					<section>
+						<img src="./img/1_otjfye20y3HU1uvUGSmlbQ.jpg" alt="flex axis">
+					</section>
+					<section>
+						<img src="./img/flex-axes.png" alt="flex start and end">
+					</section>
+				</section>
+				<section>
+					<section>
+						<span>Column</span>
+						<div class="fragment box flex" style="flex-direction: column; margin-bottom: 20px;">
+							<div>One</div>
+							<div>Two</div>
+							<div>Three</div>
+						</div>
+						<span class="fragment">Column-reverse</span>
+						<div class="fragment box flex" style="flex-direction: column-reverse;">
+							<div style="background-color: orange;">One</div>
+							<div style="background-color: orange;">Two</div>
+							<div style="background-color: orange;">Three</div>
+						</div>
+					</section>
+					<section>
+						<span>Row</span>
+						<div class="fragment box flex" style="flex-direction: row;">
+							<div>One</div>
+							<div>Two</div>
+							<div>Three</div>
+						</div>
+						<span class="fragment">Row-reverse</span>
+						<div class="fragment box flex" style="flex-direction: row-reverse;">
+							<div style="background-color: orange;">One</div>
+							<div style="background-color: orange;">Two</div>
+							<div style="background-color: orange;">Three</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Align items on main-axes</h3>
+					</section>
+					<section>
+						<h4 style="display: flex; flex-direction: column;">justify-content:</h4>
+						<ul>
+							<li class="fragment">flex-start</li>
+							<li class="fragment">flex-end</li>
+							<li class="fragment">center</li>
+							<li class="fragment">space-between</li>
+							<li class="fragment">space-around</li>
+						</ul>
+					</section>
+					<section>
+						<span>flex-start</span>
+						<div class="fragment box flex" style="justify-content: flex-start;">
+						<div>One</div>
+							<div>Two</div>
+							<div>Three</div>
+						</div>
+						<span class="fragment">flex-end</span>
+						<div class="fragment box flex" style="justify-content: flex-end;">
+								<div style="background-color: orange;">One</div>
+								<div style="background-color: orange;">Two</div>
+								<div style="background-color: orange;">Three</div>
+						</div>	
+						<span class="fragment">center</span>
+						<div class="fragment box flex" style="justify-content: center;">
+							<div style="background-color: palevioletred">One</div>
+							<div style="background-color: palevioletred">Two</div>
+							<div style="background-color: palevioletred">Three</div>
+						</div>
+					</section>
+					<section>
+						<span>space-between</span>
+						<div class="fragment box flex" style="justify-content: space-between;">
+						<div>One</div>
+							<div>Two</div>
+							<div>Three</div>
+						</div>
+						<span class="fragment">space-around</span>
+						<div class="fragment box flex" style="justify-content: space-around;">
+								<div style="background-color: orange;">One</div>
+								<div style="background-color: orange;">Two</div>
+								<div style="background-color: orange;">Three</div>
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Align items on cross-axes</h3>
+					</section>
+					<section>
+						<h4 style="display: flex; flex-direction: column;">align-items:</h4>
+						<ul>
+							<li class="fragment">flex-start</li>
+							<li class="fragment">flex-end</li>
+							<li class="fragment">center</li>
+							<li class="fragment">stretch</li>
+						</ul>
+					</section>
+					<section>
+						<span>flex-start</span>
+						<div class="fragment box flex" style="align-items: flex-start;">
+							<div style="width: 100px;">One</div>
+							<div style="width: 100px;">Two</div>
+							<div style="width: 100px;">Three text</div>
+						</div>
+						<span class="fragment">flex-end</span>
+						<div class="fragment box flex" style="align-items: flex-end;">
+								<div style="width: 100px; background-color: orange;">One</div>
+								<div style="width: 100px; background-color: orange;">Two</div>
+								<div style="width: 100px; background-color: orange;">Three text</div>
+						</div>	
+						<span class="fragment">center</span>
+						<div class="fragment box flex" style="align-items: center;">
+							<div style="width: 100px; background-color: palevioletred">One</div>
+							<div style="width: 100px; background-color: palevioletred">Two</div>
+							<div style="width: 100px; background-color: palevioletred">Three text</div>
+						</div>
+						<span class="fragment">stretch</span>
+						<div class="fragment box flex" style="align-items: stretch;">
+							<div style="width: 100px;">One</div>
+							<div style="width: 100px;">Two</div>
+							<div style="width: 100px;">Three text</div>
+						</div>
+					</section>
+				</section>
+				<section>
+						<section>
+							<p>Use the align-self to position the one item from the collection</p>
+						</section>
+						<section>
+							<h4>align-self</h4>
+							<div class="fragment box flex" style="align-items: flex-end;height: 300px;">
+								<div style="width: 150px; align-self: stretch;">stretch</div>
+								<div style="width: 150px;">end</div>
+								<div style="width: 150px;">end</div>
+								<div style="width: 150px; align-self: center;">center</div>
+							</div>
+						</section>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>align-content</h3>
+					</section>
+					<section>
+						<h4 style="display: flex; flex-direction: column;">align-content:</h4>
+						<ul>
+							<li class="fragment">flex-start</li>
+							<li class="fragment">flex-end</li>
+							<li class="fragment">center</li>
+							<li class="fragment">space-between</li>
+							<li class="fragment">space-around</li>
+							<li class="fragment">stretch</li>
+						</ul>
+					</section>
+					<section>
+						<span>flex-start</span>
+						<div class="fragment box flex" style="width: 300px; height: 300px; align-content: flex-start; flex-wrap: wrap; border: 2px solid white; border-radius: 3%">
+							<div style="width: 100px;">One</div>
+							<div style="width: 100px;">Two</div>
+							<div style="width: 100px;">Three</div>
+							<div style="width: 100px;">Four</div>
+							<div style="width: 100px;">Five</div>
+							<div style="width: 100px;">Six</div>
+							<div style="width: 100px;">Seven</div>
+							<div style="width: 100px;">Eight</div>
+						</div>
+						<span class="fragment">flex-end</span>
+						<div class="fragment box flex" style="width: 300px; height: 300px; align-content: flex-end; flex-wrap: wrap; border: 2px solid white; border-radius: 3%">
+							<div style="width: 100px; background-color: orange;">One</div>
+							<div style="width: 100px; background-color: orange;">Two</div>
+							<div style="width: 100px; background-color: orange;">Three</div>
+							<div style="width: 100px; background-color: orange;">Four</div>
+							<div style="width: 100px; background-color: orange;">Five</div>
+							<div style="width: 100px; background-color: orange;">Six</div>
+							<div style="width: 100px; background-color: orange;">Seven</div>
+							<div style="width: 100px; background-color: orange;">Eight</div>
+						</div>
+					</section>
+					<section>	
+						<span>center</span>
+						<div class="fragment box flex" style="width: 300px; height: 300px; align-content: center; flex-wrap: wrap; border: 2px solid white; border-radius: 3%">
+							<div style="width: 100px; background-color: palevioletred">One</div>
+							<div style="width: 100px; background-color: palevioletred">Two</div>
+							<div style="width: 100px; background-color: palevioletred">Three</div>
+							<div style="width: 100px; background-color: palevioletred">Four</div>
+							<div style="width: 100px; background-color: palevioletred">Five</div>
+							<div style="width: 100px; background-color: palevioletred">Six</div>
+							<div style="width: 100px; background-color: palevioletred">Seven</div>
+							<div style="width: 100px; background-color: palevioletred">Eight</div>
+						</div>
+						<span class="fragment">stretch</span>
+						<div class="fragment box flex" style="width: 300px; height: 300px; align-content: stretch; flex-wrap: wrap; border: 2px solid white; border-radius: 3%">
+							<div style="width: 100px;">One</div>
+							<div style="width: 100px;">Two</div>
+							<div style="width: 100px;">Three text</div>
+							<div style="width: 100px;">Four</div>
+							<div style="width: 100px;">Five</div>
+							<div style="width: 100px;">Six</div>
+							<div style="width: 100px;">Seven</div>
+							<div style="width: 100px;">Eight</div>
+						</div>
+					</section>
+					<section>
+						<span>space-around</span>
+						<div class="fragment box flex" style="width: 300px; height: 300px; align-content: space-around; flex-wrap: wrap; border: 2px solid white; border-radius: 3%">
+							<div style="width: 100px;">One</div>
+							<div style="width: 100px;">Two</div>
+							<div style="width: 100px;">Three</div>
+							<div style="width: 100px;">Four</div>
+							<div style="width: 100px;">Five</div>
+							<div style="width: 100px;">Six</div>
+							<div style="width: 100px;">Seven</div>
+							<div style="width: 100px;">Eight</div>
+						</div>
+						<span class="fragment">space-between</span>
+						<div class="fragment box flex" style="width: 300px; height: 300px; align-content: space-between; flex-wrap: wrap; border: 2px solid white; border-radius: 3%">
+							<div style="width: 100px; background-color: orange;">One</div>
+							<div style="width: 100px; background-color: orange;">Two</div>
+							<div style="width: 100px; background-color: orange;">Three</div>
+							<div style="width: 100px; background-color: orange;">Four</div>
+							<div style="width: 100px; background-color: orange;">Five</div>
+							<div style="width: 100px; background-color: orange;">Six</div>
+							<div style="width: 100px; background-color: orange;">Seven</div>
+							<div style="width: 100px; background-color: orange;">Eight</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<h3>Properties applied to flex items</h3>
+				</section>
+				<section>
+					<h3>Flex-wrap</h3>
+					<span class="fragment">wrap</span>
+					<div class="fragment box flex" style="flex-wrap: wrap; margin-bottom: 30px;">
+						<div style="width: 350px;">One</div>
+						<div style="width: 350px;">Two</div>
+						<div style="width: 350px;">Three</div>
+					</div>
+					<span class="fragment">wrap-reverse</span>
+					<div class="fragment box flex" style="flex-wrap: wrap-reverse;">
+						<div style="width: 350px; background-color: orange;">One</div>
+						<div style="width: 350px; background-color: orange;">Two</div>
+						<div style="width: 350px; background-color: orange;">Three</div>
+					</div>
+				</section>
+				<section>
+					<p>Flex-grow</p>
+					<p class="fragment">Flex-shrink</p>
+					<p class="fragment">Flex-basis</p>
+				</section>
+				<section>
+					<section>
+						<h4>Flex-grow</h4>
+						<p class="fragment">Sets how much of the available space in the flex container should be assigned to that item</p>
+					</section>
+					<section>
+						<img src="./img/1-gHyLHG52cySgLmy0x-edZA.gif" alt="flex-grow on gif">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h4>Flex-shrink</h4>
+						<p class="fragment">Sets the flex shrink factor of a flex item.</p>
+					</section>
+					<section>
+						<img src="./img/1_FVO9kX3wwqakhcT9JWS2Ww.gif" alt="flex-shrink">
+						<img src="./img/1_GrLzJ4jH3v2Z5Va_TMOXkQ.gif" alt="flex-shrink">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h4>Flex-basis</h4>
+						<p class="fragment">Sets the initial main size of a flex item</p>
+					</section>
+					<section>
+						<img src="./img/flex-basis.gif" alt="flex-basis example">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>The flex-flow shorthand</h3>
+						<p class="fragment">We can combine the two properties flex-direction and flex-wrap into the flex-flow shorthand</p>		
+					</section>
+					<section>
+						<h4>flex-flow</h4>
+						<pre>
+							<code data-trim>
+								.box {
+									display: flex;
+									flex-flow: row wrap;
+								}
+							</code>
+						</pre>
+						<div class="fragment box flex" style="flex-flow: row wrap;">
+							<div style="width: 350px;">One</div>
+							<div style="width: 350px;">Two</div>
+							<div style="width: 350px;">Three</div>
+						</div>	
+					</section>
+				</section>
+				<section>
+					<h5>Sources:</h5>
+					<ul>
+						<li class="fragment"><a href="https://developer.mozilla.org">developer.mozilla.org</a></li>
+						<li class="fragment"><a href="https://developers.google.com/web">developers.google.com</a></li>
+						<li class="fragment"><a href="https://tuhub.ru/posts/eshhyo-bolshe-o-tom-kak-rabotaet-flexbox-obyasnyaem-na-bolshih-krasochnyh-gif-kah">tuhub.ru</a></li>
+						<li class="fragment"><a href="https://responsivedesign.is/">responsivedesign.is</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+			});
+		</script>
+	</body>
+</html>
